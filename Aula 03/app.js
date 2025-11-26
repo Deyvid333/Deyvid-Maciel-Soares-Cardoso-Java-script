@@ -24,13 +24,15 @@
 //console.log(venda.valor.toUpperCase('pt-br', {style: 'currency', currency: 'BR'}))
 
 const paciente = {
-    peso : 300,
-    altura :  1.50,
-    nome : " rogerio do mal ",
+   
+    nome : document.querySelector('#nome'),
+    sobrenome : document.querySelector('#sobrenome'),
+    altura : document.querySelector('#altura'),
+    peso : document.querySelector('#peso'),
+    genero : document.querySelector('#genero'),
+    endereco : document.querySelector('#endereco'),
     imc : "",
-    genero : " Macha ",
-    sobrenome : " Alpha ",
-    endereço: " carapcuiba, sardinha 408 ",
+
 
 };
 
@@ -69,26 +71,36 @@ if(imc <= 18.5){
 // novoparagrafo.style.color = "violet"
 // titulo.style.color = "blue"
 
-const nome = document.querySelector('#nome')
-console.log(nome)
+// const nome = document.querySelector('#nome')
+// console.log(nome)
 
-const sobrenome = document.querySelector('#sobrenome')
-console.log(sobrenome)
+// const sobrenome = document.querySelector('#sobrenome')
+// console.log(sobrenome)
 
-const altura = document.querySelector('#altura')
-console.log(altura)
+// const altura = document.querySelector('#altura')
+// console.log(altura)
 
-const peso = document.querySelector('#peso')
-console.log(peso)
+// const peso = document.querySelector('#peso')
+// console.log(peso)
 
-const genero = document.querySelector('#genero')
-console.log(genero)
+// const genero = document.querySelector('#genero')
+// console.log(genero)
 
-const endereco = document.querySelector('#endereco')
-console.log(endereco)
+// const endereco = document.querySelector('#endereco')
+// console.log(endereco)
 
 
 const botao = document.querySelector('button')
 const form = document.querySelector('form')
 
 console.log(botao, form)
+
+function teste(){
+    form.addEventListener('submit',(evento)=>{
+        evento.preventDefault()
+        window.alert('evento recebido')
+
+    })
+}
+
+teste()
