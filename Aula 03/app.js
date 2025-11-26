@@ -86,3 +86,9 @@ console.log(genero)
 
 const endereco = document.querySelector('#endereco')
 console.log(endereco)
+
+
+const botao = document.querySelector('button')
+const form = document.querySelector('form')
+
+console.log(botao, form)
