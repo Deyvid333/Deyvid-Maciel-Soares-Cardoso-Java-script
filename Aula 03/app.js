@@ -10,8 +10,8 @@
 //console.log
 
 //const venda = {
- //   cliente: "joao",
-  //  vendedora: "joana"
+//   cliente: "joao",
+//  vendedora: "joana"
 //}
 
 //venda.cliente = "jose"
@@ -23,37 +23,31 @@
 //console.log(venda.produto.toUpperCase())
 //console.log(venda.valor.toUpperCase('pt-br', {style: 'currency', currency: 'BR'}))
 
-const paciente = {
-   
-    nome : document.querySelector('#nome'),
-    sobrenome : document.querySelector('#sobrenome'),
-    altura : document.querySelector('#altura'),
-    peso : document.querySelector('#peso'),
-    genero : document.querySelector('#genero'),
-    endereco : document.querySelector('#endereco'),
-    imc : "",
-
-
+const inputPaciente = {
+  nome: document.querySelector("#nome"),
+  sobrenome: document.querySelector("#sobrenome"),
+  altura: document.querySelector("#altura"),
+  peso: document.querySelector("#peso"),
+  genero: document.querySelector("#genero"),
+  endereco: document.querySelector("#endereco"),
+  imc: "",
 };
 
-imc = paciente.peso / paciente.altura **2;
+imc = inputPaciente.peso / inputPaciente.altura ** 2;
 
-
-if(imc <= 18.5){
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta abaixo do peso ideal, o seu imc é: " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 ")
-}else if( imc >= 18.6 && imc < 24.9){
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta com o peso ideal, parabens!!! " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9  ")
-}else if( imc >= 24.9 && imc < 29.9){
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta com exesso de peso" + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de sobre peso é: 25 - 29.9 ")
-}else if( imc >= 29.9 && imc < 34.9){
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta com obecidade tipo 1 " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obecidade tipo 1 é: 30 - 34.9 ")
-}else if( imc >= 34.9 && imc <= 39.9){
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta com obecidade tipo 2 " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obcidade tipo 2 é : 35 - 39.9 ")
-}else{
-    console.log(paciente.nome + paciente.sobrenome + " do genero: " + paciente.genero + " voce esta realmente obeso! voce atingiu a obecidade tipo 3,o seu imc é: " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obecidade tipo 3 é 40 para mais ")
-}
-
-
+// if(imc <= 18.5){
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta abaixo do peso ideal, o seu imc é: " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 ")
+// }else if( imc >= 18.6 && imc < 24.9){
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta com o peso ideal, parabens!!! " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9  ")
+// }else if( imc >= 24.9 && imc < 29.9){
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta com exesso de peso" + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de sobre peso é: 25 - 29.9 ")
+// }else if( imc >= 29.9 && imc < 34.9){
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta com obecidade tipo 1 " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obecidade tipo 1 é: 30 - 34.9 ")
+// }else if( imc >= 34.9 && imc <= 39.9){
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta com obecidade tipo 2 " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obcidade tipo 2 é : 35 - 39.9 ")
+// }else{
+//     console.log(inputPaciente.nome + inputPaciente.sobrenome + " do genero: " + inputPaciente.genero + " voce esta realmente obeso! voce atingiu a obecidade tipo 3,o seu imc é: " + imc.toFixed(2) + " o imc ideal é: 18.6 - 24.9 e o imc de obecidade tipo 3 é 40 para mais ")
+// }
 
 // const titulo = document.querySelector("h1")
 // console.log(titulo)
@@ -89,18 +83,75 @@ if(imc <= 18.5){
 // const endereco = document.querySelector('#endereco')
 // console.log(endereco)
 
+//const inputpaciente = {}
 
-const botao = document.querySelector('button')
-const form = document.querySelector('form')
+const dados = {
+  nome,
+  sobrenome,
+  altura,
+  peso,
+  genero,
+  endereco,
+  imc: "",
+};
 
-console.log(botao, form)
+//seleção dos elementos DOM / HTML
+const body = document.querySelector("body");
+const botao = document.querySelector("button");
+const form = document.querySelector("form");
 
-function teste(){
-    form.addEventListener('submit',(evento)=>{
-        evento.preventDefault()
-        window.alert('evento recebido')
+console.log(botao, form);
 
-    })
+function capturarDados() {
+  form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    //window.alert('evento recebido')
+
+    //recebe os valores(.value) dos inputs de entrada do formulario e salva dentro do objeto dados (cosnt dados )
+    dados.nome = inputPaciente.nome.value;
+    dados.sobrenome = inputPaciente.sobrenome.value;
+    dados.altura = Number(inputPaciente.altura.value);
+    dados.peso = Number(inputPaciente.peso.value);
+    dados.genero = inputPaciente.genero.value;
+    dados.endereco = inputPaciente.endereco.value;
+
+    // dados.imc = inputPaciente.imc.value
+    // console.log(inputPaciente.imc.value)
+
+    //dsipara a função que ira calcular o imc e enviar dentro do obejeto dados que contem todos os valores dos inputs digitados
+    calcularIMC(dados);
+  });
 }
 
-teste()
+//função para calcular o IMC, ela recebe os valores dentro do parenteses
+function calcularIMC(valores) {
+  //pega o valor da divisão dopeso pelo quadrado da altura e salva em dados.imc
+  dados.imc = valores.peso / valores.altura ** 2;
+
+  //com base no valor de dados.imc faz a verificação da faixa de peso
+  if (dados.imc <= 18.5) {
+    inserirResultado (dados.imc, "abaixo do peso");
+  } else if (dados.imc >= 18.6 && dados.imc < 24.9) {
+    inserirResultado( dados.imc, "peso ideal");
+  } else if (dados.imc >= 24.9 && dados.imc < 29.9) {
+    inserirResultado(dados.imc, "sobre peso");
+  } else if (dados.imc >= 29.9 && dados.imc < 34.9) {
+    inserirResultado(dados.imc), "obesidade 1";
+  } else if (dados.imc >= 34.9 && dados.imc <= 39.9) {
+    inserirResultado(dados.imc, "obesidade 2");
+  } else {
+    inserirResultado(dados.imc, "obesidade 3");
+  }
+}
+
+function inserirResultado(faixa, resultado) {
+  const paragrafo = document.querySelector("#paragrafo");
+
+  paragrafo.innerText = "";
+
+  paragrafo.innerText = `o paciente tem um IMC de ${resultado} e esta com ${faixa}`;
+
+  //body.appendChild(paragrafo)
+}
+
+capturarDados();
