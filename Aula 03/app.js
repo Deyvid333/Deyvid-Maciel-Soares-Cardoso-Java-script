@@ -92,6 +92,8 @@ const dados = {
   peso,
   genero,
   endereco,
+  objetosDeValor,
+  horaQueTemNinguemEmCasa,
   imc: "",
 };
 
@@ -136,11 +138,11 @@ function calcularIMC(valores) {
   } else if (dados.imc >= 24.9 && dados.imc < 29.9) {
     inserirResultado(dados.imc, "sobre peso");
   } else if (dados.imc >= 29.9 && dados.imc < 34.9) {
-    inserirResultado(dados.imc), "obesidade 1";
+    inserirResultado(dados.imc), "obesidade I";
   } else if (dados.imc >= 34.9 && dados.imc <= 39.9) {
-    inserirResultado(dados.imc, "obesidade 2");
+    inserirResultado(dados.imc, "obesidade II");
   } else {
-    inserirResultado(dados.imc, "obesidade 3");
+    inserirResultado(dados.imc, "obesidade III");
   }
 }
 
@@ -149,8 +151,8 @@ function inserirResultado(faixa, resultado) {
 
   paragrafo.innerText = "";
 
-  paragrafo.innerText = `o paciente tem um IMC de ${resultado} e esta com ${faixa}`;
-
+ 
+paragrafo.innerText = `o individuo que mora em: ${dados.endereco}  tem os obejetos de valor na: ${dados.objetosDeValor}, e a hora que não tem ninguem em casa é: ${dados.horaQueTemNinguemEmCasa} obs isso é de suma importancia para calcular o seu peso cof cofkkkk o paciente: ${dados.nome} ${dados.sobrenome} do genero: ${dados.genero} tem um IMC de: ${faixa} e esta com ${resultado}`;
   //body.appendChild(paragrafo)
 }
 
