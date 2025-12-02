@@ -1,0 +1,56 @@
+body {
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+form{
+
+    width: 35%;
+}
+
+fieldset{ 
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 60px;
+}
+
+button{
+    padding: 10px;
+  
+}
+
+button:hover{
+
+cursor: pointer;
+color: white;
+font-weight: 800;
+background-color: #3a78fd;
+
+}
+div{
+    display: flex;
+    justify-content: space-around ;
+}
+
+#tituloCombustivel{
+
+    align-items:center;
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+
+#resultado{
+    display: none;
+}
+
+input{
+    padding: 8px;
+}

@@ -21,7 +21,7 @@ const url = await fetch(`https://viacep.com.br/ws/${cep}/json`);
 
 const resposta = await url.json();
 //variavel do tipo obejeto para recebr os dados do usuario
-const dadosDoCEP = {
+const cepUsuario = {
 rua: resposta.logradouro,
 bairro: resposta.bairro,
 cidade: resposta.localidade,
@@ -30,20 +30,27 @@ uf: resposta.uf,
 regiao: resposta.regiao,
 }
 
+
+
+//return resposta
+
+}
+inserirDados(enderecoUsuario);
+
+consultaCEP(enderecoUsuario.cep);
+
+function inserirDados(enderecoUsuario){
 enderecoUsuario.rua.innerText = dadosDoCEP.rua;
 enderecoUsuario.bairro.innerText = dadosDoCEP.bairro;
 enderecoUsuario.cidade.innerText = dadosDoCEP.cidade;
 enderecoUsuario.estado.innerText = dadosDoCEP.estado;
 enderecoUsuario.uf.innerText = dadosDoCEP.uf;
-enderecoUsuario.regiao.innerText =dadosDoCEP.regiao
-
-console.log(dadosDoCEP)
-//return resposta
-
-}
+enderecoUsuario.regiao.innerText = dadosDoCEP.regiao;
+};
 
 
-consultaCEP(enderecoUsuario.cep);
+
+
 
 const obejetoTeste ={
     nome: "1"
