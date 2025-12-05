@@ -1,20 +1,16 @@
-body {
-
+body{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
 }
 
 form{
-
-    width: 35%;
+    max-width:80%;
 }
 
-fieldset{ 
-
+fieldset{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -23,28 +19,30 @@ fieldset{
 
 button{
     padding: 10px;
-  
 }
 
 button:hover{
-
-cursor: pointer;
-color: white;
-font-weight: 800;
-background-color: #3a78fd;
-
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    background-color: #666;
 }
+
+/* Filhos do elemento section */
 div{
     display: flex;
-    justify-content: space-around ;
+    gap: 10px;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
 }
 
 #tituloCombustivel{
-
-    align-items:center;
-    font-size: 22px;
+    text-align: center;
+    font-size: 20px;
     font-weight: 600;
-    
 }
 
 #resultado{
@@ -52,5 +50,9 @@ div{
 }
 
 input{
-    padding: 8px;
+    padding: 10px;
+}
+
+label:hover{
+    cursor: pointer;
 }
