@@ -12,9 +12,11 @@ form{
 
 fieldset{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     padding: 20px 60px;
+     max-width: 600px;
+     margin: 20px auto
 }
 
 button{
