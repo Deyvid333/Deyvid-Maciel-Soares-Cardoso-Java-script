@@ -63,13 +63,19 @@ const produto = {
 
   
 }
+//objeto para amazenar os dados da compra
+const compra = {
+  subTotal: 0,
+  total: 0,
+  itensComprados: 0,
+}
 
 produto.formulario.addEventListener("submit", (evento) => {
   evento.preventDefault(); // Previne o reload da página
 let item = {
-  quantidade: produto.quantidade.value,
+  quantidade: Number(produto.quantidade.value),
   nome: produto.produtoNome.value,
-  preco: produto.preco.value,
+  preco: Number(produto.preco.value),
   soma: produto.quantidade.value * produto.preco.value
 }
 
@@ -80,13 +86,39 @@ listaProdutos(item);
 function listaProdutos(item) {
   produto.lista.push(item);
   console.log(produto.lista);
+ 
 
 }
 
-// function somaTotal(item){
-//   let soma = (produto.quantidade.value * produto.preco.value)
-//   console.log(soma)
-// }
+function somarProdutos(listaDeProdutos){
+ listaDeProdutos.forEach(produto => {
+
+  compra.subTotal += Number(produto.quantidade * produto.preco)
+  compra.itensComprados += Number(produto.quantidade)
+  console.log( typeof compra.itensComprados)
+   console.log( typeof compra.subTotal)
+
+  
+ });
+}
+
+const btnProduto = document.querySelector("#btn-produto");
+console.log(btnProduto);
+btnProduto.addEventListener('click', (evento) =>{
+  somarProdutos(produto.lista);
+  console.log(compra.subTotal)
+  console.log(compra.itensComprados)
+});
+
+const notaFiscal = document.querySelector('#relacao-itens')
+
+const qtdItem = document.createElement("p");
+qtdItem.className = "qtd-Item";
+
+qtdItem.innerText ="215x";
+
+notaFiscal.appendChild(qtdItem);
+
 
 
 

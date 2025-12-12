@@ -75,5 +75,29 @@ body {
 
 }
 
+#fieldset-itens-comprados {
+  
+  max-height: 82.5%;
+}
+
+
+#relacao-itens {
+  display: grid;
+  grid-template-columns: (auto 300px 80px);
+  gap: 10px;
+  text-align: center;
+}
+
+.qtd-item {
+  grid-column: 1;
+}
+
+.nome-item {
+  grid-column: 2;
+}
+
+.preco-item {
+  grid-column: 3;
+}
 
 
